@@ -14,14 +14,22 @@ larabaelで作成した管理システム
 
 # Usage
 
-docker-composeで立ち上げ
-コンテナ内に入り操作
+アプリの立ち上げ
+1. ソースコードをクローン
+1. docker-composeで立ち上げ
+1. dockerのコンテナ内に入る
+1. laravelの立ち上げ
+1. http://localhost:8000 にGUIでアクセス
 
 ```bash
-git clone https://github.com/kazun1224/laravel_management_system.git
-cd examples
-docker-compose up -d
-docker-compose exec app bash
 
-root/:/var/www/# ...
+git clone https://github.com/kazun1224/laravel_management_system.git
+
+cd "directory name"
+docker-compose up -d
+
+docker-compose exec app bash
+cd management_system
+php artisan serve
+
 ```
