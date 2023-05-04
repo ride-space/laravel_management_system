@@ -7,6 +7,8 @@ vim \
 && docker-php-ext-install zip pdo_mysql opcache
 WORKDIR /var/www
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
