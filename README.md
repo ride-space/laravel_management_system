@@ -16,8 +16,12 @@ larabaelで作成した管理システム
 
 アプリの立ち上げ
 1. ソースコードをクローン
-1. docker-composeで立ち上げ
-1. dockerのコンテナ内に入る
+2. docker-composeで立ち上げ
+3. dockerのコンテナ内に入る
+4. management_systemのディレクトリに移動
+5. .envファイルを作成して.env.exampleをコピーして記述後に、dbの設定を追記
+6. APP_KEYを設定
+7. composer install & npm install でpackageをインストール
 1. laravelの立ち上げ
 1. http://localhost:8000 にGUIでアクセス
 
@@ -30,6 +34,9 @@ docker-compose up -d
 
 docker-compose exec app bash
 cd management_system
+php artisan key:generate
+composer install
+npm install
 php artisan serve
 
 ```
